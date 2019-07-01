@@ -9,6 +9,7 @@ public class Validations {
 		System.out.println(getValidEmail(scnr, "Please enter a valid email: "));
 		System.out.println(getValidPhoneNumber(scnr, "Enter a valid phone number: "));
 		System.out.println(getValidDate(scnr, "Enter a valid date: "));
+		System.out.println(getValidHTML(scnr, "Enter a valid set of HTML elements: "));
 	}
 
 	public static String getValidName(Scanner scnr, String prompt) {
@@ -74,4 +75,21 @@ public class Validations {
 		}
 		return valid;
 	}
+	
+	public static String getValidHTML(Scanner scnr, String prompt) {
+		String valid = "HTML elements are valid";
+		String html;
+		
+		System.out.println(prompt);
+		html = scnr.nextLine();
+		
+		while(!html.matches("[<][a-zA-Z0-9]+[>] [<][/][a-zA-Z0-9]+[>]")) {
+			System.out.println("Sorry, that HTML is not valid");
+			System.out.println(prompt);
+			html = scnr.nextLine();
+		}
+		
+		return valid;
+	}
+	
 }
