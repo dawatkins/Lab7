@@ -83,7 +83,7 @@ public class Validations {
 		System.out.println(prompt);
 		html = scnr.nextLine();
 		
-		while(!html.matches("[<][a-zA-Z0-9]+[>] [<][/][a-zA-Z0-9]+[>]")) {
+		while(!html.matches("[<][a-zA-Z0-9]+[>][\\s\\S]*[<][/][a-zA-Z0-9]+[>]")) {
 			System.out.println("Sorry, that HTML is not valid");
 			System.out.println(prompt);
 			html = scnr.nextLine();
